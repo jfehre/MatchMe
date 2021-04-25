@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image
 from utils.tools import get_exif_tags, get_construction_site
-import io
 
 #general setting
 st.set_page_config(layout="wide")
@@ -13,8 +12,11 @@ con_sites = ["Uttenhofen Bach", "Shey Schabelhof"]
 
 
 #### TESTING #####
-tags = get_exif_tags("assets/Uttenhofen.JPG")
-get_construction_site(con_sites_gps, tags["GPS Latitude"], tags["GPS Longitude"])
+
+#tags = get_exif_tags("assets/test/Uttenhofen.JPG")
+#get_construction_site(con_sites_gps, tags["GPS Latitude"], tags["GPS Longitude"])
+
+
 
 
 #Sidebar
@@ -60,7 +62,8 @@ if file != None:
         ## Matching
         st.header("Match with 3D Point Cloud and Calculate Camera Pose")
         if st.button("Start"):
-            st.write("Coming Soon...")
+            st.warning("Info: the following image was calculated seperately and only serves as showcase")
+            st.image("assets/Showcase_Matching.png")
 
 
 
